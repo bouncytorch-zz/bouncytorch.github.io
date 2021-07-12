@@ -1,18 +1,25 @@
-@-webkit-keyframes slide {
-    from { background-position: 0 0; }
-    to { background-position: -888px 0; }
-}
-
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-/* header {
+/* .section2-sec2 {
 	height: 737px;
 	width: 100%;
 	background: grey url(../images/section1-background.png) repeat 0 0;
 	-webkit-animation: slide 20s linear infinite;
 	filter: blur(70px);
 } */
+
+header {
+	height: 737px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background: url(assets/styles/header-bg.jpg);
+}
+
+.global {
+	width: 1218px;
+	margin: auto;
+}
