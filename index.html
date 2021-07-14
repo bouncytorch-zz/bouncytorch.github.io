@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="assets/styles/master.css">
-	<title>SLIPGATE</title>
-</head>
-<body>
-	<header>
-		<div class="global">
-			
-		</div>
-	</header>
-	<main>
-		<div class="section1">
-			
-		</div>
-		<div class="section2">
-			
-		</div>
-		<div class="section3">
-			
-		</div>
-	</main>
-	<footer>
-		
-	</footer>
 
-	<script>
-		
-	</script>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/styles/master.css">
+    <script src="assets/scripts/anime.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <title>SLIPGATE</title>
+</head>
+
+<body>
+    <script>
+    barba.init({
+        // ...
+    })
+    </script>
+    <header>
+        <div class="global">
+            <nav>
+                <div class="nav-logo">
+                    MD
+                </div>
+                <div class="nav-buttons">
+                </div>
+            </nav>
+            <div class="header-contents">
+                <h1>Welcome to the most boring web page</h1>
+                <h2>Yes, this is true. This page was officially classified as “the most boring web page on the net”</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="section1 global">
+            <div class="section1-left">
+                <h3>Like, c'mon dude...</h3>
+                <p>
+                    This page is in Segoe UI. If you didn’t know, Windows uses this font as default for all of the interface elements. So does Microsoft web page. That only says so much about my personality...
+                </p>
+            </div>
+            <div class="section1-right">
+                <p>
+                    This page is also going to be purely black and white. <br>Unless you would want to...
+                </p>
+                <div class="stl-button" onclick="replace()">Add some colors</div>
+            </div>
+        </div>
+        <div class="section2">
+        </div>
+        <div class="section3">
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script>
+    var stuffs = "<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>"
+
+    function replace() {
+        $('.section1').fadeOut("slow", function() {
+            $(this).replaceWith(stuffs).fadeIn("slow");
+        });
+    }
+    </script>
 </body>
+
 </html>
