@@ -4,18 +4,12 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/styles/master.css">
-    <script src="assets/scripts/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
     <title>SLIPGATE</title>
 </head>
 
 <body>
-    <script>
-    barba.init({
-        // ...
-    })
-    </script>
     <header>
         <div class="global">
             <nav>
@@ -43,10 +37,19 @@
                 <p>
                     This page is also going to be purely black and white. <br>Unless you would want to...
                 </p>
-                <div class="stl-button" onclick="replace()">Add some colors</div>
+                <div class="stl-button">Add some colors</div>
             </div>
         </div>
         <div class="section2">
+            <div class="section2-contents global">
+                <div class="section2-left">
+                    <h4>Jokes aside...</h4>
+                    <p>
+                        If you are visiting my place, you are either interested in my services, or you are just passing by. Either way, make sure to check out my works down below. :)
+                    </p>
+                </div>
+                <i class="fa-light fa-angle-down" style="color:#fff; font-size:64px;"></i>
+            </div>
         </div>
         <div class="section3">
         </div>
@@ -54,13 +57,15 @@
     <footer>
     </footer>
     <script>
-    var stuffs = "<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>"
-
-    function replace() {
-        $('.section1').fadeOut("slow", function() {
-            $(this).replaceWith(stuffs).fadeIn("slow");
+    var stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
+    $(document).ready(function() {
+        $(".stl-button").click(function() {
+            $(".section1").fadeOut("slow", function() {
+                $(this).replaceWith(stuffs)
+                $(".replace").fadeIn("slow")
+            });
         });
-    }
+    });
     </script>
 </body>
 
