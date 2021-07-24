@@ -60,9 +60,9 @@
     var stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
     $(document).ready(function() {
         $(".stl-button").click(function() {
-            $(".section1").fadeOut("slow", function() {
+            $(".section1").slideUp(1000, function() {
                 $(this).replaceWith(stuffs)
-                $(".replace").fadeIn("slow")
+                $(".replace").slideDown(1000)
             });
         });
     });
