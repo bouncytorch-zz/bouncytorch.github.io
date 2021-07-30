@@ -1,0 +1,97 @@
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -888px 0;
+    }
+}
+
+* {
+    font-family: Segoe UI;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    padding-top: 20px;
+
+    background-color: #e5e5e5;
+}
+
+body {
+    width: 1440px;
+    margin: auto;
+    margin-bottom: 20px;
+
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 12px rgba(0, 0, 0, 0.25);
+}
+
+header {
+    /*REMOVE HEIGHT FOR ADAPT*/
+    height: 737px;
+    position: relative;
+}
+
+main {
+    /*REMOVE HEIGHT FOR ADAPT*/
+    height: 2848px;
+}
+
+footer {
+    /*REMOVE HEIGHT FOR ADAPT*/
+    height: 243px;
+}
+
+nav {
+    position: absolute;
+    top: 11px;
+}
+
+.section1 {
+    height: 737px;
+}
+
+.section2 {
+    height: 177px;
+}
+
+.section3 {
+    height: 801px;
+}
+
+.section4-6 {
+    height: 1133px;
+    background: radial-gradient(28.82% 50.04% at 100% 50.04%, #002051 0%, #190041 25.77%, #270034 56.93%, #000000 100%);
+    border-radius: 30px;
+}
+
+.section4 {
+    height: 267px;
+}
+
+.section5 {
+    height: 433px;
+}
+
+.section6 {
+    height: 433px;
+}
+
+.global {
+    width: 1218px;
+    margin: auto;
+    padding-top: 65px;
+}
+
+.global-nopad {
+    padding-top: none;
+}
+
+.nav-logo {
+    
+}
