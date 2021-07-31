@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/master.css">a
+    <link rel="stylesheet" href="assets/styles/master.css">
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>MD's place</title>
@@ -14,9 +16,7 @@
     <header>
         <div class="global global-nopad">
             <nav>
-                <div class="nav-logo">
-                    MD
-                </div>
+                <div class="nav-logo"><a href="#">MD</a></div>
             </nav>
             <div class="header-contents">
                 <h1>Welcome to the most boring web page</h1>
@@ -28,9 +28,9 @@
     </header>
     <main>
         <div class="section1">
-            <div class="global">
+            <div class="global global-nopad">
                 <div class="section1-left">
-                    <h3>Like, c'mon dude...</h3>
+                    <h1>Like, c'mon dude...</h1>
                     <p>
                         This page is in Segoe UI. If you didn’t know, Windows uses this font as default for all of the interface elements. So does Microsoft web page. That only says so much about my personality...
                     </p>
@@ -39,14 +39,17 @@
                     <p>
                         This page is also going to be purely black and white. <br>Unless you would want to...
                     </p>
-                    <div class="section1-right-button">Add some colors</div>
+                    <div class="section1-right-button">
+                        <div class="section1-right-button-filling"></div>
+                        Add some colors
+                    </div>
                 </div>
             </div>
         </div>
         <div class="section2">
             <div class="global">
                 <div class="section2-left">
-                    <h5>Jokes aside...</h5>
+                    <h3>Jokes aside...</h3>
                     <p>
                         If you are visiting my place, you are either interested in my services, or you are just passing by. Either way, make sure to check out my works down below. :)
                     </p>
@@ -62,13 +65,12 @@
                     <div class="section-left-symbol">
                         <img src="assets/images/music-note.png" alt="">
                     </div>
-                    <div class="section-left-contents">
+                    <div class="section3-left-contents">
                         <h5>My Music</h5>
                         <p>
-                            I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community.
-                            Even though I do spend a lot of time on web development, music is still my main profession.
-
-                            My tunes are available on <img src="" alt=""> SoundCloud, <img src="" alt=""> YouTube and <img src="" alt=""> Bandcamp, though I post on SoundCloud much more often.
+                            I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM
+                            community. Even though I do spend a lot of time on web development, music is still my main profession. My tunes are available on <img src="" alt=""> SoundCloud, <img src="" alt=""> YouTube and
+                            <img src="" alt=""> Bandcamp, though I post on SoundCloud much more often.
                         </p>
                         <iframe width="500" height="321" src="https://www.youtube.com/embed/lb_lvhPfe94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
@@ -88,85 +90,94 @@
         <div class="section4-6">
             <div class="section4">
                 <div class="global">
-                	<div class="section4-left">
-                		<div class="section4-left-symbol">
-                			<img src="assets/images/file-code.png" alt="">
-                		</div>
-                		<div class="section4-left-contents">
-                			<h5>Developer Projects</h5>
-                			<p>
-                				My developer experience was a little bit shorter than music - I’ve been studying JS, HTML, CSS, PHP for 2 years. I have wide knowledge in web department, node.js and discord.js framework.
-                			</p>
-                		</div>
-                	</div>
-                	<div class="section4-right">
-                		<img src="assets/images/github.png" alt="">
-                	</div>
+                    <div class="section4-left">
+                        <div class="section4-left-symbol">
+                            <img src="assets/images/file-code.png" alt="">
+                        </div>
+                        <div class="section4-left-contents">
+                            <h5>Developer Projects</h5>
+                            <p>
+                                My developer experience was a little bit shorter than music - I’ve been studying JS, HTML, CSS, PHP for 2 years. I have wide knowledge in web department, node.js and discord.js framework.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="section4-right">
+                        <img src="assets/images/github.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="section5">
                 <div class="global">
-                	<div class="section5-left">
-                		<div class="section5-left-assembly">
-                			<div class="section5-left-assembly-logo">
+                    <div class="section5-left">
+                        <div class="section5-left-assembly">
+                            <div class="section5-left-assembly-logo">
                                 <img src="assets/images/alpha.png" alt="">
                             </div>
-                			<div class="section5-left-assembly-bg">
-                				<img src="assets/images/sublime.png" alt="">
-                			</div>
-                		</div>
-                	</div>
-                	<div class="section5-right">
-                		<p>
+                            <div class="section5-left-assembly-bg">
+                                <img src="assets/images/sublime.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section5-right">
+                        <p>
                             Alpha was an experiment of mine simply to learn the ways of discord.js. Right now alpha is used as a clean template for it’s past contributors! <br>
-                            <br>
-                            This project is most likely to turn into a framework for easier and cleaner bot development.
+                            <br> This project is most likely to turn into a framework for easier and cleaner bot development.
                         </p>
-                		<div class="section-right-h">
-                			<div class="section-right-h-djs">
+                        <div class="section-right-h">
+                            <div class="section-right-h-djs">
                                 <img src="assets/images/djs.png" alt="">
                             </div>
-                			<h5>αlpha</h5>
-                		</div>
-                	</div>
+                            <h5>αlpha</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="section6">
                 <div class="global">
-                	<div class="section6-contents">
-                		<div class="section6-contents-html5">
-                			<img src="assets/images/html5.png" alt="">
-                		</div>
-                		<div class="section6-contents-hassembly">
-                			<div class="section6-contents-hassembly-toptext">i also made</div>
-                			<div class="section6-contents-hassembly-h">This fancy page!</div>
-                		</div>
-                		<div class="section6-contents-p">
-                			and other website prototypes <br>
-                            for practice, which you can check out here.
-                		</div>
-                	</div>
+                    <div class="section6-contents">
+                        <div class="section6-contents-html5">
+                            <img src="assets/images/html5.png" alt="">
+                        </div>
+                        <div class="section6-contents-hassembly">
+                            <div class="section6-contents-hassembly-toptext">i also made</div>
+                            <div class="section6-contents-hassembly-h">This fancy page!</div>
+                        </div>
+                        <div class="section6-contents-p">
+                            and other website prototypes <br> for practice, which you can check out here.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     <footer>
-    	<div class="global">
-    		<div class="thanks">
-    			Thank you for checking out!
-    		</div>
-    		<div class="links-list">
-    			<div class="links"><a href="">Twitter</a></div>
-    			<div class="links"><a href="">Bandcamp</a></div>
-    			<div class="links"><a href="">SoundCloud</a></div>
-    			<div class="links"><a href="">YouTube</a></div>
-    			<div class="links"><a href="">GitHub</a></div>
-    		</div>
-    		<div class="copyright-lololol">
-    			SLIPGATE © 2021 Copyright lololol.
-    		</div>
-    	</div>
+        <div class="global">
+            <div class="thanks">
+                Thank you for checking out!
+            </div>
+            <div class="links-list">
+                <div class="links"><a href="">Twitter</a></div>
+                <div class="links"><a href="">Bandcamp</a></div>
+                <div class="links"><a href="">SoundCloud</a></div>
+                <div class="links"><a href="">YouTube</a></div>
+                <div class="links"><a href="">GitHub</a></div>
+            </div>
+            <div class="copyright-lololol">
+                SLIPGATE © 2021 Copyright lololol.
+            </div>
+        </div>
     </footer>
 </body>
+<script>
+    var stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
+    $(document).ready(function() {
+        $(".section1-right-button").click(function() {
+            $(".section1").slideUp(1000, function() {
+                $(this).replaceWith(stuffs)
+                $(".replace").slideDown(1000)
+            });
+        });
+    });
+</script>
 
 </html>

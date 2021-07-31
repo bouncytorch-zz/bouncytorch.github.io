@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "runtimeExecutable": "C:/Program Files/Google/Chrome Dev/Application/chrome.exe",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "d:\\Homie\\Files\\Documents\\Git\\bouncytorch.github.io\\index.html"
+        }
+    ]
+}

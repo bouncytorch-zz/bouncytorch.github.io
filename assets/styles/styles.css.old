@@ -247,7 +247,9 @@ p {
 
     background: grey url(../images/section1-background.png) repeat-x 0 0;
 
-    filter: blur(70px);
+    -webkit-filter: blur(70px);
+
+            filter: blur(70px);
 }
 
 .section2 {
