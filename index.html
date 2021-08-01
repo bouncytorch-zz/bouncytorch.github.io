@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/master.css">
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="assets/scripts/barba.umd.js"></script>
     <script src="assets/scripts/anime.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -70,8 +68,8 @@
                         <h3>My Music</h3>
                         <p>
                             I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM
-                            community. Even though I do spend a lot of time on web development, music is still my main profession. My tunes are available on <img src="" alt=""> SoundCloud, <img src="" alt=""> YouTube and
-                            <img src="" alt=""> Bandcamp, though I post on SoundCloud much more often.
+                            community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <img src="" alt=""> SoundCloud, <img src="" alt=""> YouTube
+                            and <img src="" alt=""> Bandcamp, though I post on SoundCloud much more often.
                         </p>
                         <iframe width="500" height="321" src="https://www.youtube.com/embed/lb_lvhPfe94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
@@ -180,7 +178,9 @@
 </body>
 <div class="player-assembly-player"></div>
 <script>
-    var stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
+    let arraynumber = 0;
+    const settings = $.getJSON("assets/settings/player.json");
+    const stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
     $(document).ready(function() {
         $(".section1-right-button").click(function() {
             $(".section1").slideUp(1000, function() {
@@ -188,6 +188,35 @@
                 $(".replace").slideDown(1000)
             });
         });
+        $(".player-assemby-leftangle").click(function() {
+            anime({
+                targets: '.player-assembly-player',
+                translateX: -250,
+                opacity: 0,
+                duration: 600,
+                scale: 0.5,
+                easing: 'easeInOutQuad'
+            });
+            anime.set('.player-assembly-player', {
+                translateX: 250,
+                duration: 0
+            });
+            if (arraynumber < 10) {
+                arraynumber++;
+                $('.player-assembly-player').replaceWith(settings.playerinstances[arraynumber]);
+            } else {
+                arraynumber = 0;
+                $('.player-assembly-player').replaceWith(settings.playerinstances[arraynumber]);
+            }
+            anime({
+                targets: '.player-assembly-player',
+                translateX: 0,
+                opacity: 1,
+                duration: 600,
+                scale: 1,
+                easing: 'easeInOutQuad'
+            });
+        })
     });
 </script>
 
