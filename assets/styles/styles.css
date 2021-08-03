@@ -23,6 +23,11 @@
     padding: 0;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 html {
     padding-top: 20px;
     background-color: #e5e5e5;
@@ -85,6 +90,7 @@ p {
 
 iframe {
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .section1 {
@@ -333,6 +339,15 @@ iframe {
     margin-bottom: 47px;
 }
 
+.section3-left-contents p a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    mix-blend-mode: normal;
+    color: #000;
+}
+
 .player-assemby-leftangle {
     display: flex;
     align-items: center;
@@ -342,7 +357,16 @@ iframe {
 .player-assemby-leftangle i {
     width: 61px;
     font-size: 72px;
+    transition-duration: 0.3s;
     opacity: 0.5;
+}
+
+.player-assemby-leftangle i:hover {
+    opacity: 0.2;
+}
+
+.player-assemby-leftangle i:active {
+    transform: scale(0.7);
 }
 
 .player-assembly-rightangle {
@@ -355,10 +379,20 @@ iframe {
     width: 61px;
     font-size: 72px;
     opacity: 0.5;
+    transition-duration: 0.3s;
+}
+
+.player-assembly-rightangle i:hover {
+    opacity: 0.2;
+}
+
+.player-assembly-rightangle i:active {
+    transform: scale(0.7);
 }
 
 .section3-right-playerassembly {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .section3-right p {
@@ -369,4 +403,178 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+
+.fa-soundcloud {
+    color: #FF5C00;
+}
+
+.fa-youtube {
+    color: #FF0000;
+}
+
+.fa-bandcamp {
+    color: #005A8C;
+}
+
+.section4 .global {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 38px;
+}
+
+.section4-left-contents h3 {
+    color: white;
+    margin-bottom: 19px;
+}
+
+.section4-left {
+    display: flex;
+    height: 100%;
+}
+
+.section4-left-contents p {
+    color: white;
+    width: 495px;
+}
+
+.section4-right {
+    margin-right: 128px;
+}
+
+.section5-left-assembly img[src="assets/images/alpha.png"] {
+    width: 100px;
+    height: 100px;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.section5-left-assembly {
+    width: 373.8px;
+    height: 270.78px;
+    position: relative;
+}
+
+.section5-left-assembly img {
+    position: absolute;
+}
+
+.section5-left-assembly img[src="assets/images/sublime.png"] {
+    z-index: 1;
+}
+
+.section5 .global {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section5-right {
+    display: flex;
+}
+
+.section5-right p {
+    width: 495px;
+    height: 144px;
+    color: #fff;
+    margin-right: 90px;
+}
+
+.section-right-h h3 {
+    color: #fff;
+    font-size: 48px;
+    margin-left: 9px
+}
+
+.section-right-h {
+    display: flex;
+}
+
+.section6-contents-hassembly {
+    position: relative;
+    width: 581px;
+    height: 97px;
+}
+
+.section6-contents-hassembly-toptext {
+    position: absolute;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    left: 262px;
+    top: 25px;
+}
+
+.section6-contents-hassembly-h {
+    position: absolute;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 97px;
+    color: #fff;
+}
+
+.section6-contents-p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.section6 .global {
+    padding-top: 41px;
+}
+
+.section6-contents-html5 {
+    margin-bottom: 30px;
+}
+
+.section6-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thanks {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+}
+
+.links-list {
+    display: flex;
+}
+
+.links {
+    margin-right: 33px;
+}
+
+.links a {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.copyright-lololol {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    opacity: 0.5;
+    height: 90px;
 }
