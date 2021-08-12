@@ -1,0 +1,146 @@
+html {
+    transition: all 0.4s ease-in-out;
+}
+
+body {
+    transition: all 0.4s ease-in-out;
+}
+
+.global {
+    transition: all 0.4s ease-in-out;
+}
+
+.header-contents {
+    transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width:1440px) {
+    body {
+        width: 100%;
+        margin: 0;
+    }
+    html {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1258px) {
+    .global {
+        width: 96.72%;
+        display: block;
+        margin: 0 auto;
+    }
+    .replace-text {
+        background-size: contain;
+    }
+}
+
+@media screen and (max-width: 1218px) {
+    .section3-left-contents iframe {
+        width: 400px;
+        height: 239px;
+    }
+    .section3-left-contents p {
+        width: 400px;
+    }
+    .player-assembly-player iframe {
+        width: 400px;
+        height: 400px;
+    }
+    .splide {
+        width: 442px;
+        height: 419px;
+    }
+    .section3-right {
+        justify-content: normal;
+    }
+    .section3-right p {
+        width: 442px;
+    }
+    .section3-right-playerassembly {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1209px) {
+    .section5-right {
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+    }
+    .section5-right p {
+        margin: 0;
+    }
+    .section5-right .section-right-h {
+        height: 49px;
+        position: relative;
+    }
+    .section5-right .section-right-h h3 {
+        position: absolute;
+        right: 0px;
+    }
+    .section5-right .section-left-symbol {
+        position: absolute;
+        left: 0px;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .header-contents {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 926px) {
+    .section5-right {
+        width: 100%;
+    }
+    .section5-right p {
+        width: 100%;
+    }
+    .section5-left-assembly {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 818px) {
+    .section5-right {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    .section1-left h1 {
+        font-size: 50px;
+    }
+    .section1-left {
+        width: 100%;
+    }
+    .section1-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 967px) {
+    .section1 .global {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section1-left {
+        align-items: center;
+    }
+    .section1-left p {
+        text-align: center;
+    }
+    .section1-right p {
+        text-align: center;
+    }
+    .replace-text {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
