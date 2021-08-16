@@ -242,6 +242,14 @@
     </footer>
 </body>
 <script class="anime">
+    jQuery.fn.swapWith = function(to) {
+        return this.each(function() {
+            var copy_to = $(to).clone(true);
+            var copy_from = $(this).clone(true);
+            $(to).replaceWith(copy_from);
+            $(this).replaceWith(copy_to);
+        });
+    };
     const stuffs = $("<div class=\"replace\"><div class=\"replace-text\"></div><div class=\"replace-bg\"></div></div>").hide();
     $(document).ready(function() {
         $(".section1-right-button").click(function() {
@@ -302,9 +310,12 @@
 </script>
 
 <script class="adapt">
-    const mediaQuery = window.matchMedia('(max-width: 1209px)');
+    const mediaQuery1209 = window.matchMedia('(max-width: 1209px)');
+    const mediaQuery872 = window.matchMedia('(max-width: 872px)');
+    const mediaQuery1218 = window.matchMedia('(max-width: 1218px)');
+    const mediaQuery945 = window.matchMedia('(max-width: 945px)');
 
-    function adapt(e) {
+    function adapt1209(e) {
         if (e.matches) {
             const prev = $('.section5-right .section-right-h');
             prev.insertBefore('.section5-right p');
@@ -313,8 +324,38 @@
             prev.insertBefore('.section5-right .section-right-h');
         }
     };
-    mediaQuery.addListener(adapt);
-    adapt(mediaQuery);
+
+    function adapt872(e) {
+        if (e.matches) {
+            $('.section2-left p').swapWith('.section2-right i');
+        } else {
+            $('.section2-left i').swapWith('.section2-right p');
+        }
+    };
+
+    function adapt1218(e) {
+        if (e.matches) {
+            $(' .section3-left-contents p ').replaceWith('<p>I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <br><i class="fa-brands fa-youtube"></i> YouTube</a> and <a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.</p>');
+        } else {
+            $(' .section3-left-contents p ').replaceWith('<p>I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <i class="fa-brands fa-youtube"></i> YouTube</a> and <br><a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.</p>');
+        }
+    };
+
+    function adapt945(e) {
+        if (e.matches) {
+            $('.section3-right-playerassembly').swapWith('.section3-left-contents iframe')
+        } else {
+            $('.section3-left-contents iframe').swapWith('.section3-right-playerassembly')
+        }
+    }
+    mediaQuery1209.addListener(adapt1209);
+    adapt1209(mediaQuery1209);
+    mediaQuery872.addListener(adapt872);
+    adapt872(mediaQuery872);
+    mediaQuery1218.addListener(adapt1218);
+    adapt1218(mediaQuery1218);
+    mediaQuery945.addListener(adapt945);
+    adapt945(mediaQuery945);
 </script>
 
 </html>
