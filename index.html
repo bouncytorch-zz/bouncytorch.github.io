@@ -291,7 +291,7 @@
 
 <script class="splidder">
     document.addEventListener('DOMContentLoaded', function() {
-        new Splide('.splide', {
+        const splide = new Splide('.splide', {
             direction: 'ltr',
             rewind: true,
             gap: 10,
@@ -310,6 +310,7 @@
 </script>
 
 <script class="adapt">
+    const sliderconst = $('.section3-right-playerassembly');
     const mediaQuery1209 = window.matchMedia('(max-width: 1209px)');
     const mediaQuery872 = window.matchMedia('(max-width: 872px)');
     const mediaQuery1218 = window.matchMedia('(max-width: 1218px)');
@@ -343,9 +344,37 @@
 
     function adapt945(e) {
         if (e.matches) {
-            $('.section3-right-playerassembly').swapWith('.section3-left-contents iframe')
+            $('.section3-right-playerassembly').swapWith('.section3-left-contents iframe');
+            $('.section3-right-playerassembly').replaceWith(sliderconst);
+            document.addEventListener('DOMContentLoaded', function() {
+                const splide = new Splide('.splide', {
+                    direction: 'ltr',
+                    rewind: true,
+                    gap: 10,
+                    perPage: 1,
+                    pagination: false,
+                    autoWidth: true,
+                    autoHeight: true,
+                    lazyLoad: 'nearby',
+                    focus: 'center',
+                }).mount();
+            });
         } else {
-            $('.section3-left-contents iframe').swapWith('.section3-right-playerassembly')
+            $('.section3-right iframe[src="https://www.youtube.com/embed/lb_lvhPfe94"]').swapWith('.section3-right-playerassembly');
+            $('.section3-right-playerassembly').replaceWith(sliderconst);
+            document.addEventListener('DOMContentLoaded', function() {
+                const splide = new Splide('.splide', {
+                    direction: 'ltr',
+                    rewind: true,
+                    gap: 10,
+                    perPage: 1,
+                    pagination: false,
+                    autoWidth: true,
+                    autoHeight: true,
+                    lazyLoad: 'nearby',
+                    focus: 'center',
+                }).mount();
+            });
         }
     }
     mediaQuery1209.addListener(adapt1209);

@@ -72,11 +72,6 @@ header {
     background-size: cover;
 }
 
-main {
-    /*REMOVE HEIGHT FOR ADAPT*/
-    height: 2848px;
-}
-
 footer {
     /*REMOVE HEIGHT FOR ADAPT*/
     height: 243px;
