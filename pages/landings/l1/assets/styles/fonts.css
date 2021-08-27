@@ -1,0 +1,15 @@
+@font-face {
+	font-family: Libre Franklin;
+	src: url("../fonts/LibreFranklin.ttf");
+}
+
+@font-face {
+	font-family: Libre Franklin;
+	font-style: italic;
+	src: url("../fonts/LibreFranklin-Italic.ttf");
+}
+
+@font-face {
+	font-family: Segoe MDL2 Assets;
+	src: url("../fonts/SegoeMDL2Assets.ttf");
+}

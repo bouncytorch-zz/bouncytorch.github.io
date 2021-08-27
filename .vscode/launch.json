@@ -5,11 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
-            "runtimeExecutable": "C:/Program Files/Google/Chrome Dev/Application/chrome.exe",
+            "type": "firefox",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "d:\\Homie\\Files\\Documents\\Git\\bouncytorch.github.io\\index.html"
-        }
+            "reAttach": true,
+            "name": "Launch with Firefox",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "name": "Launch with Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "runtimeExecutable": "dev",
+            "url": "${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}"
+        },
     ]
 }

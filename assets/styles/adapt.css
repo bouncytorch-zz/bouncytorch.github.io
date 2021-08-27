@@ -6,6 +6,21 @@
     html {
         padding: 0;
     }
+    header {
+        height: 100vh;
+    }
+    .header-contents {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-height: 340px) {
+    header {
+        height: initial;
+    }
+    .header-contents {
+        height: initial;
+    }
 }
 
 @media screen and (max-width: 1258px) {
@@ -34,9 +49,6 @@
     .splide {
         width: 442px;
         height: 419px;
-    }
-    .section3-right {
-        justify-content: normal;
     }
     .section3-right p {
         width: 442px;
@@ -149,17 +161,18 @@
     .section2 .global {
         display: block;
     }
-    .section2 {
-        height: fit-content;
+    .section4-right {
+        margin: 0;
     }
 }
 
 @media screen and (max-width:692px) {
     .header-contents h1 {
-        font-size: 50px;
+        font-size: 7vw;
+        width: 527px;
     }
     nav {
-        width: 100%;
+        width: 96.72197962154294%;
     }
     .nav-logo {
         display: flex;
@@ -175,7 +188,54 @@
 }
 
 @media screen and (max-width:945px) {
+    .global {
+        padding-top: 35px;
+    }
+    .global-nopad {
+        padding: 0;
+    }
     .section3 .global {
         display: block;
+    }
+    .group-div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .section3-left {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .section3-right iframe {
+        margin-bottom: 20px;
+    }
+    .section3-left-contents {
+        width: 442px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section3-left-contents p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:675px) {
+    .pw2 {
+        width: 100%;
+    }
+    .section5-left-assembly {
+        position: absolute;
+        width: 100%;
+        margin-right: 0;
+    }
+    .section5 .global {
+        justify-content: normal;
+        position: relative;
+    }
+    .section5-left {
+        position: absolute;
+        width: 100%;
     }
 }

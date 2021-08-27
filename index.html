@@ -188,8 +188,8 @@
                 <div class="global">
                     <div class="section5-left">
                         <div class="section5-left-assembly">
-                            <img src="assets/images/alpha.png" alt="">
-                            <img src="assets/images/sublime.png" alt="">
+                            <img src="assets/images/alpha.png" class="pw1" alt="">
+                            <img src="assets/images/sublime.png" class="pw2" alt="">
                         </div>
                     </div>
                     <div class="section5-right">
@@ -288,10 +288,29 @@
         });
     });
 </script>
+<script>
+    function adapt(mediaQuery, adaptFunction) {
+        console.log('ADAPT: Created Listener at ' + mediaQuery + '.');
+        const m = window.matchMedia(mediaQuery);
+        m.addListener(adaptFunction);
+        adaptFunction(m);
+    }
 
-<script class="splidder">
-    document.addEventListener('DOMContentLoaded', function() {
-        const splide = new Splide('.splide', {
+    function swap(nodeA, nodeB) {
+        const parentA = nodeA.parentNode;
+        const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+
+        // Move `nodeA` to before the `nodeB`
+        nodeB.parentNode.insertBefore(nodeA, nodeB);
+
+        // Move `nodeB` to before the sibling of `nodeA`
+        parentA.insertBefore(nodeB, siblingA);
+    };
+
+    let splide;
+    window.addEventListener('DOMContentLoaded', (event) => {
+        AOS.init();
+        splide = new Splide('.splide', {
             direction: 'ltr',
             rewind: true,
             gap: 10,
@@ -303,88 +322,103 @@
             focus: 'center',
         }).mount();
     });
-</script>
 
-<script class="aos">
-    AOS.init();
-</script>
-
-<script class="adapt">
-    const sliderconst = $('.section3-right-playerassembly');
-    const mediaQuery1209 = window.matchMedia('(max-width: 1209px)');
-    const mediaQuery872 = window.matchMedia('(max-width: 872px)');
-    const mediaQuery1218 = window.matchMedia('(max-width: 1218px)');
-    const mediaQuery945 = window.matchMedia('(max-width: 945px)');
-
-    function adapt1209(e) {
+    adapt('(max-width: 1218px)', (e) => {
+        console.log('ADAPT: Initiated adapt at ' + '(max-width: 1218px)' + '.');
+        const node = document.getElementsByClassName('section3-left-contents')[0].getElementsByTagName('p')[0];
         if (e.matches) {
-            const prev = $('.section5-right .section-right-h');
-            prev.insertBefore('.section5-right p');
+            console.log('ADAPT: Match at ' + '(max-width: 1218px)' + '.');
+            node.innerHTML = 'I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <br><i class="fa-brands fa-youtube"></i> YouTube</a> and <a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.';
         } else {
-            const prev = $('.section5-right p');
-            prev.insertBefore('.section5-right .section-right-h');
+            console.log('ADAPT: Reverse at ' + '(max-width: 1218px)' + '.');
+            node.innerHTML = 'I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <i class="fa-brands fa-youtube"></i> YouTube</a> and <br><a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.';
         }
-    };
+    });
 
-    function adapt872(e) {
+    adapt('(max-width: 1209px)', (e) => {
+        const parent = document.getElementsByClassName('section5-right')[0];
+        console.log('ADAPT: Initiated adapt at ' + '(max-width: 1209px)' + '.');
         if (e.matches) {
-            $('.section2-left p').swapWith('.section2-right i');
+            console.log('ADAPT: Match at ' + '(max-width: 1209px)' + '.');
+            const nchild = parent.getElementsByClassName('section-right-h')[0];
+            const refchild = parent.getElementsByTagName('p')[0];
+            parent.insertBefore(nchild, refchild);
         } else {
-            $('.section2-left i').swapWith('.section2-right p');
+            console.log('ADAPT: Reverse at ' + '(max-width: 1209px)' + '.');
+            const nchild = parent.getElementsByTagName('p')[0];
+            const refchild = parent.getElementsByClassName('section-right-h')[0];
+            parent.insertBefore(nchild, refchild);
         }
-    };
+    });
 
-    function adapt1218(e) {
+    adapt('(max-width: 945px)', (e) => {
+        const Group = document.getElementsByClassName('group-div')[0];
+        console.log('ADAPT: Initiated adapt at ' + '(max-width: 945px)' + '.');
         if (e.matches) {
-            $(' .section3-left-contents p ').replaceWith('<p>I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <br><i class="fa-brands fa-youtube"></i> YouTube</a> and <a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.</p>');
+            console.log('ADAPT: Match at ' + '(max-width: 945px)' + '.');
+            const youtube = document.getElementsByClassName('section3-left-contents')[0].getElementsByTagName('iframe')[0];
+            const soundcloud = document.getElementsByClassName('section3-right-playerassembly')[0];
+            swap(youtube, soundcloud);
+            const Icon = document.getElementsByClassName('section3-left')[0].getElementsByClassName('section-left-symbol')[0];
+            const Title = document.getElementsByClassName('section3-left-contents')[0].getElementsByTagName('h3')[0];
+            if (!Group) {
+                const GroupDiv = document.createElement("div");
+                GroupDiv.classList.add("group-div");
+                document.getElementsByClassName("section3-left")[0].prepend(GroupDiv);
+                GroupDiv.append(Title);
+                GroupDiv.append(Icon);
+            } else {
+                Group.append(Title);
+                Group.append(Icon);
+            }
         } else {
-            $(' .section3-left-contents p ').replaceWith('<p>I’ve been a digital musician for about 3-4 years right about now. I am quite versatile, proficient in a lot of musical genres, but I mostly enjoy making lo-fi, world, piano and other various genres, like video game OSTs. I am also a proud member of VGM community. <br>Even though I do spend a lot of time on web development, music is still my main profession.<br><br>My tunes are available on <a href="https://soundcloud.com/bouncytorch" target=_blank><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>, <a href="https://www.youtube.com/channel/UCkEfOGJyByC7D1YdOsTiw0g" target=_blank> <i class="fa-brands fa-youtube"></i> YouTube</a> and <br><a href="https://bouncytorch.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i> Bandcamp</a>, though I post on SoundCloud much more often.</p>');
+            console.log('ADAPT: Reverse at ' + '(max-width: 945px)' + '.');
+            const youtube = document.getElementsByClassName('section3-right')[0].getElementsByTagName('iframe')[0];
+            const soundcloud = document.getElementsByClassName('section3-right-playerassembly')[0];
+            swap(soundcloud, youtube);
+            if (Group) {
+                const Icon = document.getElementsByClassName('group-div')[0].getElementsByClassName('section-left-symbol')[0];
+                const Title = document.getElementsByClassName('group-div')[0].getElementsByTagName('h3')[0];
+                document.getElementsByClassName('section3-left-contents')[0].prepend(Title);
+                document.getElementsByClassName('section3-left')[0].prepend(Icon);
+                Group.remove();
+            }
         }
-    };
+    });
 
-    function adapt945(e) {
+    adapt('(max-width: 872px)', (e) => {
+        console.log('ADAPT: Initiated adapt at ' + '(max-width: 872px)' + '.');
         if (e.matches) {
-            $('.section3-right-playerassembly').swapWith('.section3-left-contents iframe');
-            $('.section3-right-playerassembly').replaceWith(sliderconst);
-            document.addEventListener('DOMContentLoaded', function() {
-                const splide = new Splide('.splide', {
-                    direction: 'ltr',
-                    rewind: true,
-                    gap: 10,
-                    perPage: 1,
-                    pagination: false,
-                    autoWidth: true,
-                    autoHeight: true,
-                    lazyLoad: 'nearby',
-                    focus: 'center',
-                }).mount();
-            });
+            console.log('ADAPT: Match at ' + '(max-width: 872px)' + '.');
+            const node1 = document.getElementsByClassName('section2-left')[0].getElementsByTagName('p')[0];
+            const node2 = document.getElementsByClassName('section2-right')[0].getElementsByTagName('i')[0];
+            swap(node2, node1);
         } else {
-            $('.section3-right iframe[src="https://www.youtube.com/embed/lb_lvhPfe94"]').swapWith('.section3-right-playerassembly');
-            $('.section3-right-playerassembly').replaceWith(sliderconst);
-            document.addEventListener('DOMContentLoaded', function() {
-                const splide = new Splide('.splide', {
-                    direction: 'ltr',
-                    rewind: true,
-                    gap: 10,
-                    perPage: 1,
-                    pagination: false,
-                    autoWidth: true,
-                    autoHeight: true,
-                    lazyLoad: 'nearby',
-                    focus: 'center',
-                }).mount();
-            });
+            console.log('ADAPT: Reverse at ' + '(max-width: 872px)' + '.');
+            const node1 = document.getElementsByClassName('section2-left')[0].getElementsByTagName('i')[0];
+            const node2 = document.getElementsByClassName('section2-right')[0].getElementsByTagName('p')[0];
+            swap(node1, node2);
         }
-    }
-    mediaQuery1209.addListener(adapt1209);
-    adapt1209(mediaQuery1209);
-    mediaQuery872.addListener(adapt872);
-    adapt872(mediaQuery872);
-    mediaQuery1218.addListener(adapt1218);
-    adapt1218(mediaQuery1218);
-    mediaQuery945.addListener(adapt945);
-    adapt945(mediaQuery945);
+    });
+
+    adapt('(max-width: 675px)', (e) => {
+        console.log('ADAPT: Initiated adapt at ' + '(max-width: 675px)' + '.');
+        const node1 = document.getElementsByClassName('section4-right')[0];
+        const node2 = document.getElementsByClassName('section5-left-assembly')[0];
+        const sublime = node2.getElementsByClassName("pw2")[0];
+        const icon = node2.getElementsByClassName("pw1")[0];
+        if (e.matches) {
+            console.log('ADAPT: Match at ' + '(max-width: 675px)' + '.');
+            node1.style.display = "none";
+            sublime.src = 'assets/images/sublime-adapt.png';
+            icon.style.display = "none";
+        } else {
+            console.log('ADAPT: Reverse at ' + '(max-width: 675px)' + '.');
+            node1.style.display = "block";
+            sublime.src = 'assets/images/sublime.png';
+            icon.style.display = "block";
+        }
+    })
 </script>
 
 </html>

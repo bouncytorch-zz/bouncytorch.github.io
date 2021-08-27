@@ -31,6 +31,7 @@ a {
 html {
     padding-top: 20px;
     background-color: #e5e5e5;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -79,7 +80,7 @@ footer {
 
 nav {
     position: absolute;
-    top: 11px;
+    margin-top: 11px;
 }
 
 h1 {
@@ -116,7 +117,6 @@ iframe {
 }
 
 .section2 {
-    height: 177px;
     background: #000000;
 }
 
@@ -309,6 +309,7 @@ iframe {
     color: #FFFFFF;
     text-align: right;
     width: 443px;
+    padding-bottom: 39px;
 }
 
 .section2 .global {
