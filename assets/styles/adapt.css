@@ -16,10 +16,10 @@
 
 @media screen and (max-height: 340px) {
     header {
-        height: initial;
+        height: 340px;
     }
     .header-contents {
-        height: initial;
+        height: 340px;
     }
 }
 
@@ -236,6 +236,35 @@
     }
     .section5-left {
         position: absolute;
+        width: 100%;
+    }
+    .section5-right {
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .section6-contents-hassembly-h {
+        font-size: 64px;
+    }
+    .section6-contents-hassembly-toptext {
+        font-size: 9px;
+    }
+    .section6-contents-p {
+        font-size: 14px;
+    }
+    .section6-contents-hassembly {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+@media screen and (max-width: 553px) {
+    .section4-left-contents p {
         width: 100%;
     }
 }

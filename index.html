@@ -291,26 +291,26 @@
 <script>
     function adapt(mediaQuery, adaptFunction) {
         console.log('ADAPT: Created Listener at ' + mediaQuery + '.');
-        const m = window.matchMedia(mediaQuery);
-        m.addListener(adaptFunction);
-        adaptFunction(m);
+        try {
+            const m = window.matchMedia(mediaQuery);
+            m.addListener(adaptFunction);
+            adaptFunction(m);
+        } catch (error) {
+            return console.log(error)
+        }
     }
 
     function swap(nodeA, nodeB) {
         const parentA = nodeA.parentNode;
         const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
-
         // Move `nodeA` to before the `nodeB`
         nodeB.parentNode.insertBefore(nodeA, nodeB);
-
         // Move `nodeB` to before the sibling of `nodeA`
         parentA.insertBefore(nodeB, siblingA);
     };
-
-    let splide;
     window.addEventListener('DOMContentLoaded', (event) => {
         AOS.init();
-        splide = new Splide('.splide', {
+        const splide = new Splide('.splide', {
             direction: 'ltr',
             rewind: true,
             gap: 10,
@@ -350,6 +350,8 @@
             parent.insertBefore(nchild, refchild);
         }
     });
+
+
 
     adapt('(max-width: 945px)', (e) => {
         const Group = document.getElementsByClassName('group-div')[0];
@@ -393,6 +395,7 @@
             const node1 = document.getElementsByClassName('section2-left')[0].getElementsByTagName('p')[0];
             const node2 = document.getElementsByClassName('section2-right')[0].getElementsByTagName('i')[0];
             swap(node2, node1);
+            return;
         } else {
             console.log('ADAPT: Reverse at ' + '(max-width: 872px)' + '.');
             const node1 = document.getElementsByClassName('section2-left')[0].getElementsByTagName('i')[0];
@@ -418,7 +421,7 @@
             sublime.src = 'assets/images/sublime.png';
             icon.style.display = "block";
         }
-    })
+    });
 </script>
 
 </html>
