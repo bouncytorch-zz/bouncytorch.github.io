@@ -5,19 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "name": "Launch with Firefox",
-            "file": "${workspaceFolder}/index.html"
-        },
-        {
-            "name": "Launch with Chrome",
-            "request": "launch",
             "type": "pwa-chrome",
-            "runtimeExecutable": "dev",
-            "url": "${workspaceFolder}/index.html",
-            "webRoot": "${workspaceFolder}"
-        },
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "d:\\Homie\\Files\\Documents\\git\\bouncytorch.github.io\\index.html"
+        }
     ]
 }
