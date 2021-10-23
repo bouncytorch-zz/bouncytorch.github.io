@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    overflow: overlay;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -52,7 +56,7 @@ p {
     font-size: 24px;
 }
 
-body > * {
+body>* {
     width: 1170px;
     background-color: #ffffff;
 }
@@ -65,8 +69,9 @@ a {
     color: unset;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
     color: #ffffff;
     font-family: Roboto;
 }
@@ -74,6 +79,28 @@ ol, ul {
 footer {
     background: #3F3F3F;
     height: 293px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background: rgb(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    border: 5px solid transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-clip: content-box;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(20, 20, 20, 0.7);
 }
 
 .h-bg {
@@ -133,7 +160,7 @@ footer {
     height: 273px;
 }
 
-.sec1-right > img {
+.sec1-right>img {
     width: 259px;
     height: 259px;
 }
@@ -144,18 +171,19 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
 .sec1-left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.sec2 > .wrap > * {
+.sec2>.wrap>* {
     display: flex;
     margin-bottom: 25px;
 }
 
-.sec2 > .wrap > div[style="text-align: right;"] {
+.sec2>.wrap>div[style="text-align: right;"], .sec2>.wrap>div[style="text-align: right; margin-bottom: 0;"] {
     display: flex;
     justify-content: flex-end;
 }
@@ -169,7 +197,7 @@ footer {
     padding: 67px 71px;
 }
 
-.sec3 > .wrap {
+.sec3>.wrap {
     display: flex;
     justify-content: space-between;
 }
@@ -200,7 +228,7 @@ footer {
     text-align: right;
 }
 
-footer > .wrap {
+footer>.wrap {
     display: flex;
     justify-content: space-between;
     padding-bottom: 37px;
