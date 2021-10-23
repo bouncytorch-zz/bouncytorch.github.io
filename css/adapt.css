@@ -134,6 +134,10 @@
         margin-bottom: 1.1904761904761905vw;
         font-size: 2vw !important;
     }
+
+    footer>.wrap {
+        padding-bottom: 5vw;
+    }
 }
 
 @media screen and (max-width: 690px) {
